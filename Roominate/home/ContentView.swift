@@ -4,8 +4,8 @@ import UserNotifications
 struct ContentView: View {
     
     @State private var pags = 0
-    @State private var title = "Please lower your volume"
-    @State private var body = "A roommate requests you lower your volume"
+    @State private var notifTitle = "Please lower your volume"
+    @State private var notifContent = "A roommate requests you lower your volume"
     
     var body: some View {
         if (pags == 1) {
@@ -152,8 +152,8 @@ struct ContentView: View {
         let notificationCenter = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
+        content.title = notifTitle
+        content.body = notifContent
         content.sound = .default
         
         // let trigger = UN
