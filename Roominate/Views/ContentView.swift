@@ -36,15 +36,9 @@ struct ContentView: View {
                         Button(action: {
                             pags=6;
                         }) {
-                            Text("Settings")
-                                .foregroundStyle(.black)
-                        }
-                        Button {
-                            print("Open settings")
-                        } label: {
-                            Rectangle()
-                                .cornerRadius(15)
-                                .frame(width: 50.0, height: 50.0)
+                            Image(systemName: "gearshape")
+                                .resizable()
+                                .frame(width: 50, height: 50)
                         }
                     }
                     
