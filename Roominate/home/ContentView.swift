@@ -1,8 +1,11 @@
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     
     @State private var pags = 0
+    @State private var title = "Please lower your volume"
+    @State private var body = "A roommate requests you lower your volume"
     
     var body: some View {
         if (pags == 1) {
@@ -123,6 +126,37 @@ struct ContentView: View {
                 .padding()
             }
         }
+    }
+    
+    func checkForPermission() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                self.dispatchNotification()
+            case .denied:
+                return
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { didAllow, error in
+                    if didAllow {
+                        self.dispatchNotification()
+                    }
+                }
+            default:
+                return
+            }
+            }
+    }
+    
+    func dispatchNotification() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        // let trigger = UN
     }
 }
 
