@@ -78,7 +78,7 @@ struct ContentView: View {
                                         popUp = true
                                         // TODO: notification to user
                                     }
-                                }
+                                } .foregroundStyle(.white)
                         }
                             Spacer()
                             
