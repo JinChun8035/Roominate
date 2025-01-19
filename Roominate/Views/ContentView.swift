@@ -2,9 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-
-    
     @State private var pags = 0
+    
     var body: some View {
         if (pags == 1) {
             ScheduleView()
@@ -19,18 +18,21 @@ struct ContentView: View {
         } else if (pags == 6) {
             SettingsView()
         } else {
+            
             ZStack {
                 
+                // Background colour
                 Color(.systemMint)
                     .ignoresSafeArea()
                 
                 VStack {
-                    
+                    // Header
                     HStack(alignment: .top) {
-                        // Logo
-                        Rectangle()
-                            .cornerRadius(15)
-                            .frame(width: 50.0, height: 50.0)
+                        VStack(alignment: .leading) {
+                            Text("Hello,")
+                                .font(.title)
+                            Text("Welcome To Simpler Shared Living")
+                        } .foregroundStyle(.white)
                         Spacer()
                         // Settings
                         Button(action: {
@@ -39,52 +41,56 @@ struct ContentView: View {
                             Image(systemName: "gearshape")
                                 .resizable()
                                 .frame(width: 50, height: 50)
+                                .foregroundStyle(.white)
                         }
                     }
-                    
-                    // Profile picture
-                    Rectangle()
-                        .cornerRadius(15)
-                        .frame(width: 200, height: 200)
-                    Text("name")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.black)
                     Spacer()
                     
-                    Button(action: {
-                        pags=5;
-                    }) {
-                        Text("Profile")
-                            .foregroundStyle(.black)
-                    }
+                    // Quick Alerts
+                    Text("Quick Alerts")
+                        .font(.title)
+                        .foregroundStyle(.white)
                     
-                    // Instant alerts
                     HStack {
+                        Button(action: {
+                            pags=6;
+                        }) {
+                            Image(systemName: "speaker.slash")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.white)
+                        }
                         Spacer()
-                        Rectangle()
-                            .cornerRadius(15)
-                            .frame(width: 80.0, height: 80.0)
+                        
+                        Button(action: {
+                            pags=6;
+                        }) {
+                            Image(systemName: "person.2.slash")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.white)
+                        }
                         Spacer()
-                        Rectangle()
-                            .cornerRadius(15)
-                            .frame(width: 80.0, height: 80.0)
-                        Spacer()
-                        Rectangle()
-                            .cornerRadius(15)
-                            .frame(width: 80.0, height: 80.0)
-                        Spacer()
-                        Rectangle()
-                            .cornerRadius(15)
-                            .frame(width: 80.0, height: 80.0)
-                        Spacer()
-                    }
+                        
+                        Button(action: {
+                            pags=6;
+                        }) {
+                            Image(systemName: "bubbles.and.sparkles")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.white)
+                        }
+                    } .padding()
+                    Spacer()
                     
+                    //Navigation
                     Button(action: {
                         pags=1;
                     }) {
                         Text("Schedule")
                             .foregroundStyle(.black)
+                            .frame(width: 300, height: 80)
+                            .background(.white)
                     }
                     
                     Button(action: {
@@ -92,6 +98,8 @@ struct ContentView: View {
                     }) {
                         Text("Calender")
                             .foregroundStyle(.black)
+                            .frame(width: 300, height: 80)
+                            .background(.white)
                     }
                     
                     Button(action: {
@@ -99,6 +107,8 @@ struct ContentView: View {
                     }) {
                         Text("Finance")
                             .foregroundStyle(.black)
+                            .frame(width: 300, height: 80)
+                            .background(.white)
                     }
                     
                     Button(action: {
@@ -106,29 +116,9 @@ struct ContentView: View {
                     }) {
                         Text("Alerts")
                             .foregroundStyle(.black)
+                            .frame(width: 300, height: 80)
+                            .background(.white)
                     }
-                    
-                    //                NavigationView {
-                    //
-                    //                    NavigationLink(destination: Navigator()) {
-                    //                        Text("Schedule")
-                    //                            .foregroundStyle(.black)
-                    //                    }
-                    //                }
-                    //
-                    //                NavigationView {
-                    //                    NavigationLink(destination: ScheduleView()) {
-                    //                        Text("Expenses")
-                    //                            .foregroundStyle(.black)
-                    //                    }
-                    //                }
-                    //
-                    //                NavigationView {
-                    //                    NavigationLink(destination: ScheduleView()) {
-                    //                        Text("Messaging")
-                    //                            .foregroundStyle(.black)
-                    //                    }
-                    //                }
                 }
                 .padding()
             }
