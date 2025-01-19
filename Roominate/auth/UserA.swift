@@ -1,6 +1,7 @@
 import Foundation
 
-struct LoginRequest: Encodable {
+struct UserA: Codable {
     let username: String
+    let email: String
     let password: String
 }
