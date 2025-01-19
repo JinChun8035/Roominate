@@ -7,7 +7,7 @@ struct LoginScreen: View {
     
     var body: some View {
         if navigateToMainView {
-            MainView()
+            ContentView()
         } else {
             VStack {
                 Text("Welcome!")

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MainView: View {
+struct ContentView: View {
     
     
     
@@ -21,7 +21,7 @@ struct MainView: View {
                     Spacer()
                     // Settings
                     Button {
-                        addRoommate()
+                        print("Open settings")
                     } label: {
                         Rectangle()
                             .cornerRadius(15)
@@ -60,28 +60,32 @@ struct MainView: View {
                     Spacer()
                 }
                 
-                // Navigation
-                
                 NavigationView {
-                    NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/ }
+                    NavigationLink(destination: ScheduleView()) {
+                        Text("Schedule")
+                            .foregroundStyle(.black)
+                    }
+                }
+        
+                NavigationView {
+                    NavigationLink(destination: ScheduleView()) {
+                        Text("Expenses")
+                            .foregroundStyle(.black)
+                    }
                 }
                 
-                RoundedRectangle(cornerRadius: 3)
-                    .frame(height: 80.0)
-                RoundedRectangle(cornerRadius: 3)
-                    .frame(height: 80.0)
-                RoundedRectangle(cornerRadius: 3)
-                    .frame(height: 80.0)
+                NavigationView {
+                    NavigationLink(destination: ScheduleView()) {
+                        Text("Messaging")
+                            .foregroundStyle(.black)
+                    }
+                }
             }
             .padding()
         }
     }
-    
-    func addRoommate() {
-        print("Add roommate")
-    }
 }
 
 #Preview {
-    MainView()
+    ContentView()
 }
