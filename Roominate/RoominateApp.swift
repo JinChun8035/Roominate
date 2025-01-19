@@ -11,7 +11,16 @@ import SwiftUI
 struct RoominateApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            LoginScreen()
         }
     }
 }
+
+//struct bruh: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            MainView()
+//        }
+//    }
+//}
+
