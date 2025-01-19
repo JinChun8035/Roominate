@@ -141,20 +141,23 @@ struct ContentView: View {
                         }
                     }
                     .padding()
-                
-                if popUp {
-                    VStack {
-                        Text("Please lower your volume")
-                            .frame(width: 100, height: 50)
-                            .background(.black)
-                            .foregroundStyle(.white)
-                        Button("Ok") {
-                            popUp = false
-                        }
-                        .frame(width: 100, height: 30)
-                        .background(.gray)
+                    .alert(isPresented: $popUp) {
+                        Alert(title: Text("Lower Your Volume"), message: Text("A roommate requests that you lower your volume"), dismissButton: .default(Text("OK")))
                     }
-                }
+                
+//                if popUp {
+//                    VStack {
+//                        Text("Please lower your volume")
+//                            .frame(width: 100, height: 50)
+//                            .background(.black)
+//                            .foregroundStyle(.white)
+//                        Button("Ok") {
+//                            popUp = false
+//                        }
+//                        .frame(width: 100, height: 30)
+//                        .background(.gray)
+//                    }
+//                }
                 
                 }
             }
