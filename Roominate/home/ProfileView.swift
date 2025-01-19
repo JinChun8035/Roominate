@@ -26,8 +26,13 @@ struct ProfileView: View {
         }
         
         VStack {
-            Text("Room: ") // TODO: show room code
-            Text("Under construction: leave room")
+            Text("User: Aaa")
+            Text("Room: " + RoomViewModel().roomCode)
+            
+            Text("")
+            Text("")
+            Text("")
+            Text("Under construction: leave room, sign out, delete account, change password")
         }
                 
     }

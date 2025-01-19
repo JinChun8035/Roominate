@@ -33,10 +33,14 @@ struct ContentView: View {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading) {
                             HStack {
+                                
                                 Text("Hello")
                                     .font(.title)
+                                Button("Aaa") {
+                                    pags = 5
+                                }
                                 // TODO: button shows username and navigates to profile
-                            }
+                            } .font(.title)
                             Text("Welcome To Simpler Shared Living")
                         } .foregroundStyle(.white)
                         Spacer()
@@ -66,10 +70,10 @@ struct ContentView: View {
                                 .frame(width: 50, height: 50)
                                 .foregroundStyle(.white)
                         }
-                        Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                            /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                            /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
-                        }
+//                        Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
+//                            /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+//                            /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+//                        }
                         Spacer()
                         
                         Button(action: {

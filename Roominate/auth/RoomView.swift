@@ -18,7 +18,14 @@ struct RoomView: View {
             viewModel.createRoom()
             // TODO: nav to content view and 
         }
+        
+        Text("")
+        Text("")
+        Text("")
+        
         TextField("ROOM CODE", text: $viewModel.roomCode)
+            .padding()
+            .border(.gray)
         Button("Join existing room") {
             // action
         }

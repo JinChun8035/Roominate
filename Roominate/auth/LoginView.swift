@@ -8,7 +8,8 @@ struct LoginView: View {
         if (goback) {
             Start()
         } else if (viewModel.isAuthenticated){
-            ContentView()
+            // ContentView()
+            RoomView()
         } else{
             VStack(spacing: 20) {
                 Button(action: {
