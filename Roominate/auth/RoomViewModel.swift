@@ -8,7 +8,8 @@
 import Foundation
 
 class RoomViewModel: ObservableObject {
-    @Published var roomCode = ""
+    @Published var roomCode = "Gx3Y" // TODO: fix bug where it doesn't actually update roomcode (need to save to JSON)
+    @Published var emptyRoom = ""
     
     func createRoom() {
         roomCode = randomString(length: 4)

@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct ProfileView: View {    
+    @StateObject private var roomviewmodel = RoomViewModel()
+    
     
     @State private var goback = false
     var body: some View {
@@ -40,9 +42,8 @@ struct ProfileView: View {
                     }
                 }
             }
-            
+           
         }
-                
     }
 }
 
