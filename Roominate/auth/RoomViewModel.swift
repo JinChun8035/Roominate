@@ -12,6 +12,7 @@ class RoomViewModel: ObservableObject {
     
     func createRoom() {
         roomCode = randomString(length: 4)
+        
         // TODO: show rm # as popup, rm # will display in profile note that in popup
     }
     

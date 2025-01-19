@@ -16,7 +16,8 @@ struct RoomView: View {
     var body: some View {
         Button("Create new room") {
             viewModel.createRoom()
-            // TODO: nav to content view and 
+            // TODO: nav to content view and
+            ContentView()
         }
         
         Text("")
