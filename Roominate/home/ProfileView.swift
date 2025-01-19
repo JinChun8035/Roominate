@@ -17,24 +17,32 @@ struct ProfileView: View {
             ContentView()
         } else {
             
-            Button(action: {
-                goback=true;
-            }) {
-                Text("Return")
-                    .foregroundStyle(.black)
-            }
-            
-            Text("SettingsView, World!")
-            
-            VStack {
-                Text("User: Eva")
-                Text("Room: " + roomviewmodel.roomCode)
+            ZStack {
                 
-                Text("")
-                Text("")
-                Text("")
-                Text("Under construction: leave room, sign out, delete account, change password")
+                // Background colour
+                Color(.systemMint)
+                    .ignoresSafeArea()
+                
+                    VStack {
+                        Button(action: {
+                            goback=true;
+                        }) {
+                            Text("Return")
+                                .foregroundStyle(.black)
+                                .frame(width: 300, height: 80)
+                                .background(.white)
+                        }
+                        Text("User: Aaa")
+                        Text("Room: " + RoomViewModel().roomCode)
+                        
+                        Text("")
+                        Text("")
+                        Text("")
+                        Text("Under construction: leave room, sign out, delete account, change password")
+                    }
+                }
             }
+           
         }
     }
 }

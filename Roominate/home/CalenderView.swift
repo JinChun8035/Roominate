@@ -15,14 +15,25 @@ struct CalenderView: View {
             ContentView()
         } else {
             
-            Button(action: {
-                goback=true;
-            }) {
-                Text("Return")
-                    .foregroundStyle(.black)
+            ZStack {
+                
+                // Background colour
+                Color(.systemMint)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Button(action: {
+                        goback=true;
+                    }) {
+                        Text("Return")
+                            .foregroundStyle(.black)
+                            .frame(width: 300, height: 80)
+                            .background(.white)
+                    }
+                    
+                    Text("Calender, World!")
+                }
             }
-            
-            Text("CalenderView, World!")
         }
     }
 }
