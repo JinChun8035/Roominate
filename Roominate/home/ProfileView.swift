@@ -27,7 +27,7 @@ struct ProfileView: View {
             Text("SettingsView, World!")
             
             VStack {
-                Text("User: Aaa")
+                Text("User: Eva")
                 Text("Room: " + roomviewmodel.roomCode)
                 
                 Text("")

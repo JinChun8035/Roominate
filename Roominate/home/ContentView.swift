@@ -37,7 +37,7 @@ struct ContentView: View {
                                 
                                 Text("Hello")
                                     .font(.title)
-                                Button("Aaa") {
+                                Button("Eva") {
                                     pags = 5
                                 }
                                 // TODO: button shows username and navigates to profile
@@ -74,7 +74,7 @@ struct ContentView: View {
                             }
 
                                 Menu("User") {
-                                    Button("Aaa") {
+                                    Button("Eva") {
                                         popUp = true
                                         // TODO: notification to user
                                     }

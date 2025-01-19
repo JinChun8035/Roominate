@@ -28,7 +28,8 @@ struct RoomView: View {
             Text("")
             Text("")
             
-            TextField("ROOM CODE", text: $viewModel.roomCode)
+//            TextField("ROOM CODE", text: $viewModel.roomCode)
+            TextField("ROOM CODE", text: $viewModel.emptyRoom)
                 .padding()
                 .border(.gray)
             Button("Join existing room") {
