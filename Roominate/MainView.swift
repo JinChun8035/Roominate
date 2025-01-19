@@ -1,28 +1,37 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    
+    
     var body: some View {
         
         ZStack {
             
-            Color(red: 229.0, green: 236.0, blue: 255.0)
+            Color(.systemMint)
                 .ignoresSafeArea()
             
             VStack {
                 
-                HStack {
+                HStack(alignment: .top) {
                     // Logo
-                    Image("logoPlaceholder")
-                        .resizable()
+                    Rectangle()
                         .cornerRadius(15)
-                        .aspectRatio(contentMode: .fit)
-                    // Add roommate
-                    RoundedRectangle(cornerRadius: 3)
                         .frame(width: 50.0, height: 50.0)
+                    Spacer()
+                    // Settings
+                    Button {
+                        addRoommate()
+                    } label: {
+                        Rectangle()
+                            .cornerRadius(15)
+                            .frame(width: 50.0, height: 50.0)
+                    }
                 }
                 
                 // Profile picture
-                RoundedRectangle(cornerRadius: 3)
+                Rectangle()
+                    .cornerRadius(15)
                     .frame(width: 200, height: 200)
                 Text("name")
                     .font(.title)
@@ -32,17 +41,31 @@ struct MainView: View {
                 
                 // Instant alerts
                 HStack {
-                    // Lower the volume
-                    Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
-                        /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
-                        /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
-                    }
-                    
-                    // Custom
-                    
+                    Spacer()
+                    Rectangle()
+                        .cornerRadius(15)
+                        .frame(width: 80.0, height: 80.0)
+                    Spacer()
+                    Rectangle()
+                        .cornerRadius(15)
+                        .frame(width: 80.0, height: 80.0)
+                    Spacer()
+                    Rectangle()
+                        .cornerRadius(15)
+                        .frame(width: 80.0, height: 80.0)
+                    Spacer()
+                    Rectangle()
+                        .cornerRadius(15)
+                        .frame(width: 80.0, height: 80.0)
+                    Spacer()
                 }
                 
                 // Navigation
+                
+                NavigationView {
+                    NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/ }
+                }
+                
                 RoundedRectangle(cornerRadius: 3)
                     .frame(height: 80.0)
                 RoundedRectangle(cornerRadius: 3)
@@ -52,6 +75,10 @@ struct MainView: View {
             }
             .padding()
         }
+    }
+    
+    func addRoommate() {
+        print("Add roommate")
     }
 }
 
