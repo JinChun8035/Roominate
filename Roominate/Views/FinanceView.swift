@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct FinanceView: View {
     
     @State private var goback = false
     var body: some View {
@@ -22,7 +22,7 @@ struct SettingsView: View {
                     .foregroundStyle(.black)
             }
             
-            Text("SettingsView, World!")
+            Text("ContentView, World!")
         }
     }
 }

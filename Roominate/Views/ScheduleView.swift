@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct ScheduleView: View {
+    
+    @State private var goback = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if (goback) {
+            ContentView()
+        } else {
+            
+            Button(action: {
+                goback=true;
+            }) {
+                Text("Return")
+                    .foregroundStyle(.black)
+            }
+            
+            Text("ScheduleView, World!")
+        }
     }
 }
 
