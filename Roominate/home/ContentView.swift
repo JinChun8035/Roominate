@@ -5,7 +5,7 @@ struct ContentView: View {
     
     @State private var pags = 0
     @State private var notifTitle = "Please lower your volume"
-    @State private var notifContent = "A roommate requests you lower your volume"
+    @State private var notifContent = "Your volume is too high"
     
     var body: some View {
         if (pags == 1) {
@@ -32,8 +32,11 @@ struct ContentView: View {
                     // Header
                     HStack(alignment: .top) {
                         VStack(alignment: .leading) {
-                            Text("Hello,")
-                                .font(.title)
+                            HStack {
+                                Text("Hello")
+                                    .font(.title)
+                                // TODO: button shows username and navigates to profile
+                            }
                             Text("Welcome To Simpler Shared Living")
                         } .foregroundStyle(.white)
                         Spacer()
@@ -50,7 +53,7 @@ struct ContentView: View {
                     Spacer()
                     
                     // Quick Alerts
-                    Text("Quick Alerts")
+                    Text("Anonymous Quick Alerts")
                         .font(.title)
                         .foregroundStyle(.white)
                     
@@ -62,6 +65,10 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 50, height: 50)
                                 .foregroundStyle(.white)
+                        }
+                        Picker(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/) {
+                            /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+                            /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
                         }
                         Spacer()
                         
@@ -99,7 +106,7 @@ struct ContentView: View {
                     Button(action: {
                         pags=2;
                     }) {
-                        Text("Calender")
+                        Text("Calendar")
                             .foregroundStyle(.black)
                             .frame(width: 300, height: 80)
                             .background(.white)

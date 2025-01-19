@@ -25,34 +25,11 @@ struct ProfileView: View {
             Text("SettingsView, World!")
         }
         
-            VStack {
-                HStack {
-                    NavigationLink(destination: ProfileView()) {
-                        Image("logoPlaceholder")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(15)
-                    }
-                    Spacer()
-    //                NavigationStack {
-    //                    NavigationLink {
-    //                        SettingsView()
-    //                    } label: {
-    //                        Image(systemName: "gearshape")
-    //                            .resizable()
-    //                            .frame(width: 50, height: 50)
-    //                    }
-    //
-    //                }
-                }
+        VStack {
+            Text("Room: ") // TODO: show room code
+            Text("Under construction: leave room")
+        }
                 
-                Text("name")
-                
-                Group {
-                    Text("Test")
-                }
-                .background(Color(red: 255.0, green: 155.0, blue: 100.0))
-            }
     }
 }
 
