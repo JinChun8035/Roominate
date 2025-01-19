@@ -25,18 +25,17 @@ struct ProfileView: View {
             }
             
             Text("SettingsView, World!")
-        }
-        
-        VStack {
-            Text("User: Aaa")
-            Text("Room: " + roomviewmodel.roomCode)
             
-            Text("")
-            Text("")
-            Text("")
-            Text("Under construction: leave room, sign out, delete account, change password")
-        }
+            VStack {
+                Text("User: Aaa")
+                Text("Room: " + roomviewmodel.roomCode)
                 
+                Text("")
+                Text("")
+                Text("")
+                Text("Under construction: leave room, sign out, delete account, change password")
+            }
+        }
     }
 }
 
