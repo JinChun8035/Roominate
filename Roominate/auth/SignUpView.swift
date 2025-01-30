@@ -10,66 +10,73 @@ struct SignUpView: View {
             Start()
         } else {
             
-            VStack(spacing: 20) {
+            ZStack {
                 
+                // Background colour
+                Color(.systemMint)
+                    .ignoresSafeArea()
+                VStack(spacing: 20) {
                     
-                Button(action: {
-                    goback=true;
-                }) {
-                    Text("Return")
-                }
-                Text("Sign Up")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.top, 40)
-                
-                Spacer()
-                
-                // Username Field
-                TextField("Username", text: $viewModel.username)
-                    .padding()
-                //                .background(Color(UIColor.systemGray6))
-                    .cornerRadius(10)
-                //                .autocapitalization(.none)
-                
-                // Email Field
-                TextField("Email", text: $viewModel.email)
-                    .padding()
-                //                .background(Color(UIColor.systemGray6))
-                    .cornerRadius(10)
-                //                .keyboardType(.emailAddress)
-                //                .autocapitalization(.none)
-                
-                // Password Field
-                SecureField("Password", text: $viewModel.password)
-                    .padding()
-                //                .background(Color(UIColor.systemGray6))
-                    .cornerRadius(10)
-                
-                // Confirm Password Field
-                SecureField("Confirm Password", text: $viewModel.confirmPassword)
-                    .padding()
-                //                .background(Color(UIColor.systemGray6))
-                    .cornerRadius(10)
-                
-                // Sign Up Button
-                Button(action: {
-                    viewModel.handleSignUp()
-                }) {
+                    
+                    Button(action: {
+                        goback=true;
+                    }) {
+                        Text("Return")
+                            .foregroundStyle(.white)
+                    }
                     Text("Sign Up")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.top, 40)
+                    
+                    Spacer()
+                    
+                    // Username Field
+                    TextField("Username", text: $viewModel.username)
                         .padding()
-                        .background(Color.blue)
+                    //                .background(Color(UIColor.systemGray6))
                         .cornerRadius(10)
+                    //                .autocapitalization(.none)
+                    
+                    // Email Field
+                    TextField("Email", text: $viewModel.email)
+                        .padding()
+                    //                .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                    //                .keyboardType(.emailAddress)
+                    //                .autocapitalization(.none)
+                    
+                    // Password Field
+                    SecureField("Password", text: $viewModel.password)
+                        .padding()
+                    //                .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                    
+                    // Confirm Password Field
+                    SecureField("Confirm Password", text: $viewModel.confirmPassword)
+                        .padding()
+                    //                .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                    
+                    // Sign Up Button
+                    Button(action: {
+                        viewModel.handleSignUp()
+                    }) {
+                        Text("Sign Up")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .cornerRadius(10)
+                            .foregroundStyle(.black)
+                            .background(.white)
+                    }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
-            }
-            .padding()
-            .alert(isPresented: $viewModel.showAlert) {
-                Alert(title: Text("Sign Up"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
+                .padding()
+                .alert(isPresented: $viewModel.showAlert) {
+                    Alert(title: Text("Sign Up"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
+                }
             }
         }
     }
